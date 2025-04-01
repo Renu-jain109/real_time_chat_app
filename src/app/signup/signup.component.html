@@ -1,0 +1,41 @@
+<!-- Main container for the sign-up form -->
+<div class="container">
+
+    <!-- Sign-up form box -->
+    <div class="signupBox">
+
+        <!-- User avatar image -->
+        <img class="user" src="/assets/sign-up-face2.png" height="100px" width="100px">
+
+        <!-- Sign-up title -->
+        <h3>Sign up here</h3>
+
+        <!-- Form for user input -->
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+            <!-- action="login" method="post" -->
+
+            <!-- Fields for username, email, and password -->
+            <div class="inputBox">
+                <input id="uname" type="text" name="Username" placeholder="Username" class="form-control" formControlName="displayName">
+                <input id="email" type="email" name="Email" placeholder="E-mail id" class="form-control" formControlName="email">
+                <input id="pass" type="password" name="Password" placeholder="Password" class="form-control" formControlName="password">
+            </div>
+
+            <!-- Submit button for the sign-up form -->
+            <input type="submit" name="" value="Sign-Up">
+
+        </form>
+
+        <!-- Link for forgotten password -->
+        <a href="#">Forget Password<br></a>
+
+        <!-- Login link for users with an existing account -->
+        <div class="text-center">
+            Have an Account?<a href="login" style="color: #59238F;" class="ms-2">Login</a>
+        </div>
+
+    </div>
+</div>
+
+
+

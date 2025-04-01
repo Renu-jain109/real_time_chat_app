@@ -1,0 +1,20 @@
+<nav class="bg-gray-600 py-2">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-white text-2xl font-semibold">
+            <img src="/assets/chat-logo/logo-2.jpg" alt="" class="w-14 h-14 rounded">
+        </a>
+        <div class="">
+
+            <button type="button" *ngIf="loggedIn"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" routerLink="/login">Login</button>
+
+            <button type="button" *ngIf="loggedIn"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" (click)="logout()">Logout</button>
+
+            <button type="button"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" routerLink="/signup">Sign UP</button>
+                
+
+        </div>
+    </div>
+</nav>

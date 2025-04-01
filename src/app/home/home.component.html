@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+
+<div class=" mx-auto">
+    <section class="relative w-full h-screen min-h-[600px] overflow-hidden flex items-center">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="/assets/Intentional-Networking.webp" alt="Background Image" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Overlay for Better Visibility -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Content Inside the Section -->
+        <div class="relative z-10 text-white text-center flex items-center flex-col px-4">
+            <h1 class="text-5xl font-bold mb-4">Welcome to ChatApp</h1>
+            <h3 class="text-3xl mb-4">Instant Communication, Anytime, Anywhere.</h3>
+            <p class="mb-4 text-xl w-11/12 md:w-1/2">
+                With <strong>real-time chat app</strong>, staying connected has never been easier!
+                Whether you're chatting with friends, family, or colleagues, Chat app ensures fast, reliable, and secure
+                communication in real-time.
+            </p>
+
+            <!-- Join Chat Button -->
+            <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 
+                           font-medium rounded-lg text-lg px-6 py-3 mt-4" (click)="joinChat()">
+                Join Chat
+            </button>
+
+            <!-- Divider -->
+            <div class="my-6 w-full flex justify-center">
+                <hr class="border-t-2 border-white w-1/3 md:w-1/2 opacity-80">
+            </div>
+
+            <!-- Log in Link -->
+            <p class="text-xl w-11/12 md:w-1/2" routerLink="/chat/list">Already a member?
+                <a href="login" class="text-blue-500 hover:text-blue-300 underline">Log in</a>
+            </p>
+        </div>
+    </section>
+</div>

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'chat-app-new' title`, () => {
+  it(`should have the 'real-time-chat-app' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('chat-app-new');
+    expect(app.title).toEqual('real-time-chat-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, chat-app-new');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, real-time-chat-app');
   });
 });
