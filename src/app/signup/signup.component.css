@@ -1,3 +1,4 @@
+/* Main container with full-height background image */
 .container {
     background-image: url("/assets/sign-up-background.png");
     height: 100vh;
@@ -8,16 +9,20 @@
     overflow: hidden
 }
 
+/* Responsive background behavior for small screens */
 @media screen and (max-width: 600px) {
     body {
         background-size: cover fixed
     }
 }
 
+/* Full height for particles.js background effect */
 #particles-js {
     height: 100%
 }
 
+
+/* Centered signup box styling */
 .signupBox {
     position: absolute;
     top: 50%;
@@ -27,16 +32,20 @@
     min-height: 200px;
     background: #000000;
     border-radius: 10px;
-    padding: 40px;
+    padding: 20px 40px 20px 40px;
     box-sizing: border-box;
 }
 
+
+/* Center and space user icon */
 .user {
     margin: 0 auto;
     display: block;
     margin-bottom: 20px
 }
 
+
+/* signup form heading style */
 h3 {
     margin: 0;
     padding: 0 0 20px;
@@ -44,11 +53,13 @@ h3 {
     text-align: center
 }
 
+/* Inputs should take full width and spacing */
 .signupBox input {
     width: 100%;
     margin-bottom: 20px
 }
 
+/* Input field styles for email and password */
 .inputBox input[type="text"],
 .inputBox input[type="email"],
 .inputBox input[type="password"] {
@@ -63,6 +74,8 @@ h3 {
     box-sizing: border-box
 }
 
+
+/* Hover effects for input fields */
 .inputBox input[type="text"]:hover,
 .inputBox input[type="email"]:hover,
 .inputBox input[type="password"]:hover {
@@ -74,13 +87,15 @@ h3 {
         0 2px 0 black
 }
 
+
+/* Focus effect for better UX */
 .inputBox input[type="text"]:focus,
 .inputBox input[type="email"]:focus,
 .inputBox input[type="password"]:focus {
     border-bottom: 2px solid #42F3FA
 }
 
-
+/* Submit button styling */
 .signupBox input[type="submit"] {
     border: none;
     outline: none;
@@ -92,6 +107,7 @@ h3 {
     cursor: pointer
 }
 
+/* Link styling below signup form */
 .signupBox a {
     color: #262626;
     font-size: 14px;
@@ -101,6 +117,3 @@ h3 {
     display: block
 }
 
-.signupBox a:hover {
-    color: #00ffff;
-}

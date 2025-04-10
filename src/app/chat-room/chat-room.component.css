@@ -1,0 +1,12 @@
+/* Make links inside chat message bubble look and behave like real links */
+.chatContainer a {
+    color: #2563eb;            /* Tailwind Blue-600 */
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .chatContainer a:hover {
+    color: #1d4ed8;            /* Tailwind Blue-700 */
+    text-decoration: underline;
+  }
+  

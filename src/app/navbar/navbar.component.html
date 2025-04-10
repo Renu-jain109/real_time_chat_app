@@ -1,19 +1,31 @@
-<nav class="bg-gray-600 py-2">
-    <div class="container mx-auto flex justify-between items-center">
+<!-- Navbar with fixed position at the top -->
+<nav class="bg-gray-300 py-2 fixed top-0 w-full z-50">
+
+    <!-- Container to center content and space between logo and buttons -->
+    <div class="container z-index-1000 px-12 flex justify-between items-center">
+
+        <!-- Logo Section -->
         <a href="#" class="text-white text-2xl font-semibold">
             <img src="/assets/chat-logo/logo-2.jpg" alt="" class="w-14 h-14 rounded">
         </a>
+
+        <!-- Authentication Buttons -->
         <div class="">
 
-            <button type="button" *ngIf="loggedIn"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" routerLink="/login">Login</button>
+            <!-- Show Login button only if not logged in -->
+            <button type="button" *ngIf="!loggedIn"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                routerLink="/login">Login</button>
 
+            <!-- Show Logout button only if logged in -->
             <button type="button" *ngIf="loggedIn"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" (click)="logout()">Logout</button>
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                (click)="logout()">Logout</button>
 
+            <!-- Always show Sign Up button -->
             <button type="button"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" routerLink="/signup">Sign UP</button>
-                
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                routerLink="/signup">Sign UP</button>
 
         </div>
     </div>

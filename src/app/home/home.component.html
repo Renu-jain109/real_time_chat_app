@@ -5,7 +5,7 @@
 
         <!-- Background Image -->
         <div class="absolute inset-0">
-            <img src="/assets/Intentional-Networking.webp" alt="Background Image" class="w-full h-full object-cover" />
+            <img src="/assets/background-image.jpeg" alt="Background Image" class="w-full h-full object-cover" />
         </div>
 
         <!-- Overlay for Better Visibility -->
@@ -22,7 +22,7 @@
             </p>
 
             <!-- Join Chat Button -->
-            <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 
+            <button class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 
                            font-medium rounded-lg text-lg px-6 py-3 mt-4" (click)="joinChat()">
                 Join Chat
             </button>
@@ -34,8 +34,49 @@
 
             <!-- Log in Link -->
             <p class="text-xl w-11/12 md:w-1/2" routerLink="/chat/list">Already a member?
-                <a href="login" class="text-blue-500 hover:text-blue-300 underline">Log in</a>
+                <a href="login" class="text-purple-500 hover:text-purple-300 underline">Log in</a>
             </p>
         </div>
     </section>
+
+
+    <main>
+        <div class="flex flex-col md:flex-row justify-between h-full items-center mt-12">
+
+            <!-- Image Section -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-14 flex items-center justify-center">
+                <img src="/assets/background.jpg" alt="Message Image" class="w-full h-full object-cover" />
+            </div>
+
+            <!-- Text Section -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-10 flex flex-col justify-center items-center ">
+                <h2 class="text-3xl font-bold text-center">Real-Time Messaging</h2>
+                <p class="text-xl p-8 px-16">Send and receive messages instantly with minimal delay.<strong> Real Time
+                        Chat App</strong> supports seamless real-time communication, so you never miss a conversation.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row justify-between h-full items-center ">
+
+            <!-- Text Section -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-10 flex flex-col justify-center items-center ">
+                <h2 class="text-3xl font-bold text-center">Room Management</h2>
+                <p class="text-xl p-8 px-16">Welcome to Room Management, the ultimate platform for seamless room
+                    creation, real-time communication, and easy switching between chat rooms.
+                </p>
+            </div>
+
+            <!-- Image Section -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-14 flex items-center justify-center">
+                <img src="/assets/streamline-communication.png" alt="Message Image"
+                    class="w-full h-full object-cover" />
+            </div>
+
+
+        </div>
+    </main>
 </div>
+
+<app-footer></app-footer>

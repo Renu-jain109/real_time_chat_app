@@ -12,13 +12,40 @@
 
         <!-- Form for user input -->
         <form [formGroup]="signupForm" (ngSubmit)="signUp()">
-            <!-- action="login" method="post" -->
 
             <!-- Fields for username, email, and password -->
             <div class="inputBox">
-                <input id="uname" type="text" name="Username" placeholder="Username" class="form-control" formControlName="displayName">
-                <input id="email" type="email" name="Email" placeholder="E-mail id" class="form-control" formControlName="email">
-                <input id="pass" type="password" name="Password" placeholder="Password" class="form-control" formControlName="password">
+                <input id="username" type="text" name="Username" placeholder="Username" class="form-control"
+                    formControlName="displayName">
+                <!-- Username errors -->
+                <div class="text-red-500"
+                    *ngIf="signupForm.get('displayName')?.invalid && signupForm.get('displayName')?.touched">
+                    <small *ngIf="signupForm.get('displayName')?.errors?.['required']">Username is required</small>
+                    <small *ngIf="signupForm.get('displayName')?.errors?.['pattern']">Invalid username (only
+                        alphanumeric)</small>
+                </div>
+
+
+                <input id="email" type="email" name="Email" placeholder="E-mail id" class="form-control"
+                    formControlName="email">
+                <!-- Email errors -->
+                <div class="text-red-500" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                    <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</small>
+                    <small *ngIf="signupForm.get('email')?.errors?.['email']">Enter a valid email</small>
+                </div>
+
+                <input id="pass" type="password" name="Password" placeholder="Password" class="form-control"
+                    formControlName="password">
+                <!-- Password errors -->
+                <div class="text-red-500"
+                    *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                    <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</small>
+                    <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                        characters</small>
+                    <small *ngIf="signupForm.get('password')?.errors?.['pattern']"> Password must have at least 6
+                        characters, 1 capital letter and 1 number.</small>
+
+                </div>
             </div>
 
             <!-- Submit button for the sign-up form -->
@@ -26,16 +53,10 @@
 
         </form>
 
-        <!-- Link for forgotten password -->
-        <a href="#">Forget Password<br></a>
-
         <!-- Login link for users with an existing account -->
-        <div class="text-center">
+        <div class="text-center text-white">
             Have an Account?<a href="login" style="color: #59238F;" class="ms-2">Login</a>
         </div>
 
     </div>
 </div>
-
-
-

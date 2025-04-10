@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router){};
+
+  constructor(private router: Router) { }; // Inject Router for navigation
 
   ngOnInit(): void {
   }
 
-
-
-  joinChat(){
-    if(localStorage.getItem("idToken")){
-      this.router.navigate(['/chat/room'])
-    }else{
-      this.router.navigate(['/']);
-      // window.location.href="/"
-      window.location.reload();
+  // Navigate user to chat room if logged in, else reload home page
+  joinChat() {
+    if (localStorage.getItem("idToken")) {
+      this.router.navigate(['/chat/room']);  // Redirect to chat room if token exists
+    } else {
+      this.router.navigate(['/']); // Redirect to home if not authenticated
+      window.location.reload(); // Reload the page
     }
-    }
+  };
 
 }

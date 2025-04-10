@@ -1,50 +1,53 @@
-<div class="relative min-h-screen bg-cover bg-center bg-[url('/assets/login-background.jpg')]">
-    <div class="flex justify-center items-center min-h-screen">
-        <div class="rounded-lg shadow-lg p-6 w-full max-w-sm" style="background-color: rgba(0, 0, 0, 0.5);">
-            <div class="text-center mb-4">
-                <h3 class="text-2xl font-bold text-white">Login</h3>
-            </div>
-            <form (ngSubmit)="login()">
-                <div class="mb-5">
-                    <div class="relative">
-                        <div
-                            class=" absolute inset-y-0 left-0 flex items-center justify-center w-10 h-10 rounded-s bg-yellow-500 pointer-events-none">
-                            <i class="fas fa-user text-black"></i>
-                        </div>
-                        <input type="text" [(ngModel)]="loginForm.email" name="email"
-                            class="form-control block w-full pl-12 pr-3 py-2 bg-white text-black rounded-md focus:outline-none focus:ring focus:ring-gray-500 "
-                            placeholder="email">
+<!-- Main container for the Login form -->
+<div class="container">
 
-                    </div>
+    <!-- Login form box -->
+    <div class="loginBox">
+
+        <!-- User avatar image -->
+        <img class="user" src="/assets/sign-up-face2.png" height="100px" width="100px">
+
+        <!-- Login title -->
+        <h3>Login here</h3>
+
+        <!-- Form for user input -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <!-- Fields for email, and password -->
+            <div class="inputBox">
+
+                <input id="email" type="email" name="Email" placeholder="E-mail id" class="form-control"
+                    formControlName="email">
+                <!-- Email errors -->
+                <div class="text-red-500" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                    <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+                    <span *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email</span>
                 </div>
-                <div class="mb-5">
-                    <div class="relative">
-                        <div
-                            class="absolute inset-y-0 left-0 flex items-center justify-center w-10 h-10 rounded-s bg-yellow-500 pointer-events-none">
-                            <i class="fas fa-key text-black"></i>
-                        </div>
-                        <input type="password" [(ngModel)]="loginForm.password" name="password"
-                            class="block w-full pl-12 pr-3 py-2 bg-white text-black rounded-md focus:outline-none focus:ring focus:ring-gray-500"
-                            placeholder="password">
-                    </div>
+
+                <input id="pass" type="password" name="Password" placeholder="Password" class="form-control"
+                    formControlName="password">
+                <!-- Password errors -->
+                <div class="text-danger"
+                    *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                    <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+                    <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                        characters</span>
+                    <small *ngIf="loginForm.get('password')?.errors?.['pattern']"> Password must have at least 6
+                        characters, 1 capital letter and 1 number.</small>
+
                 </div>
-                <div class="flex justify-end">
-                    <button type="submit"
-                        class="bg-yellow-500 text-black py-2 px-6 rounded-md hover:bg-white transition duration-300">Login</button>
-                </div>
-            </form>
-            <div class="text-center text-white mt-4">
-                <p>Don't have an account?
-                    <a href="signup"
-                        class="text-yellow-500 ml-1 hover:text-blue-500 hover:font-bold hover:underline hover:underline-offset-2 transition duration-200">Sign
-                        Up</a>
-                </p>
-                <p class="mt-2">
-                    <a href="#" class="text-yellow-500 hover:text-blue-500 hover:font-bold hover:underline hover:underline-offset-2 transition duration-200">Forgot your
-                        password?</a>
-                        <button (click)="testToastr()">Test Toastr</button>
-                </p>
             </div>
+
+            <!-- Submit button for the login form -->
+            <input type="submit" name="" value="Login">
+
+        </form>
+
+
+        <!-- signup link for users with an existing account -->
+        <div class="text-center text-white">
+            Don't have an account?<a href="signup" style="color: #59238F;" class="ms-2">Sign-Up</a>
         </div>
+
     </div>
 </div>

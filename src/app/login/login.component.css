@@ -1,64 +1,111 @@
-/* .background-image{
-    background-image: url('/assets/login-background.jpg');
+/* Main container with full-height background image */
+.container {
+    background-image: url("/assets/sign-up-background.png");
+    height: 100vh;
+    font-family: sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-    font-family: 'sans-serif', Numans;
-    overflow: hidden
-    
-    }
-    
-    .container{
-    height: 100%;
-    align-content: center;
-    }
-    
-    .card{
-    height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
-    }
-    
-    .input-group-text{
-    width: 50px;
-    background-color: #FFC312;
-    color: black;
-    border:0 !important;
-    }
-    
-    input:focus{
-    outline: 0 0 0 0  !important;
-    box-shadow: 0 0 0 0 !important;
-    
-    }
-    
-    .remember{
-    color: white;
-    }
-    
-    .remember input
-    {
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    margin-right: 5px;
-    }
-    
-    .login_btn{
-    color: black;
-    background-color: #FFC312;
-    width: 100px;
-    }
-    
-    .login_btn:hover{
-    color: black;
-    background-color: white;
-    }
-    
-    
-     */
+    overflow: hidden;
+}
 
-    
+/* Responsive background behavior for small screens */
+@media screen and (max-width: 600px) {
+    body {
+        background-size: cover fixed;
+    }
+}
+
+/* Full height for particles.js background effect */
+#particles-js {
+    height: 100%;
+}
+
+/* Centered login box styling */
+.loginBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    min-height: 200px;
+    background: #000000;
+    border-radius: 10px;
+    padding: 20px 40px 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Center and space user icon */
+.user {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Login form heading style */
+h3 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #59238F;
+    text-align: center;
+}
+
+/* Inputs should take full width and spacing */
+.loginBox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Input field styles for email and password */
+.inputBox input[type="email"],
+.inputBox input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+/* Hover effects for input fields */
+.inputBox input[type="email"]:hover,
+.inputBox input[type="password"]:hover {
+    color: #42F3FA;
+    border: 1px solid #42F3FA;
+    box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+        0 0 10px rgba(0, 255, 0, .2),
+        0 0 15px rgba(0, 255, 0, .1),
+        0 2px 0 black;
+}
+
+/* Focus effect for better UX */
+.inputBox input[type="email"]:focus,
+.inputBox input[type="password"]:focus {
+    border-bottom: 2px solid #42F3FA;
+}
+
+/* Submit button styling */
+.loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #59238F;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Link styling below login form */
+.loginBox a {
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding-bottom: 10px;
+}

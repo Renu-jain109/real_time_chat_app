@@ -14,54 +14,46 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  signupForm!: FormGroup;
-  formBuilder = inject(FormBuilder);
-  authService = inject(AuthService);
+  signupForm!: FormGroup;  // Signup form instance
+  formBuilder = inject(FormBuilder); // For building reactive form
+  authService = inject(AuthService); // For Firebase signup
   toastr = inject(ToastrService);
   router = inject(Router);
 
-  ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.minLength(6)]],
-      displayName: ['', Validators.required]
 
-    });
+  ngOnInit(): void {
+    // Initialize form with validation
+    this.signupForm = this.formBuilder.group({
+      displayName: ['', [Validators.required, Validators.pattern('^[a-zA-Z. ]+$')]], // Name: only letters/spaces
+      email: ['', [Validators.required, Validators.email]], // Email: valid format
+      password: ['',
+        [Validators.required, // Ensures password is required
+        Validators.minLength(6),// Ensures password is at least 6 characters long
+        Validators.pattern('^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).+$')]], // Ensures password is at least 1 upper case, 1 number and 1 special character
+    },
+    );
   };
 
-  signUp(){
 
-    const {email, password,displayName} = this.signupForm.value;
-    
-
-    this.authService.signUp(email,password,displayName,);
-
-    if(this.signupForm.valid){
-      this.toastr.success("Sign Up successfully");
-      this.signupForm.reset();
-      this.router.navigate(['/login']);
-
-    }else{
-      this.toastr.error("Please all fields required");
-      this.signupForm.reset();
+  // Sign-up method
+  signUp() {
+    if (this.signupForm.invalid) {
+      this.toastr.error("All fields are required and must be valid!");
       return;
-}
+    }
+
+    const { displayName, email, password } = this.signupForm.value;
+
+    this.authService.signUp(email, password, displayName)
+      .then(() => {
+        this.toastr.success("Signup successful");
+        this.signupForm.reset();
+        this.router.navigate(['/login']); // Redirect after signup
+      })
+      .catch((error: any) => {
+        console.error("Signup error:", error);
+        this.toastr.error(error.message || "Signup failed");
+        throw error;
+      });
   }
-
-
-  //  signUp() {
-
-  //   const {username, email, password} = this.signupForm.value;
-
-  //   this.authService.signUp(username,email, password);
-  //   if(this.signupForm.valid){
-  //     this.toastr.success("Sign Up successfully");
-  //     this.signupForm.reset();
-  //   }else{
-  //     this.toastr.error("Please all fields required");
-  //     this.signupForm.reset();
-  //     return;
-  //   }
-  // }
-
 }
