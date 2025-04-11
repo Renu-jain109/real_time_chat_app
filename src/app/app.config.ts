@@ -11,16 +11,10 @@ import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-// import { ConfirmationService, MessageService } from 'primeng/api';
-// import { providePrimeNG } from 'primeng/config';
-// import Aura from '@primeng/themes/aura';
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    // MessageService,
-    // ConfirmationService,
     provideAnimations(),  // ✅ Only this is needed for animations
     provideToastr({
       positionClass: 'toast-top-right', // Make sure it's exactly this
@@ -43,12 +37,5 @@ export const appConfig: ApplicationConfig = {
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
     provideMessaging(() => getMessaging()),
-
-
-    // providePrimeNG({
-    //   theme: {
-    //     preset: Aura
-    //   }
-    // })
   ]
 };
