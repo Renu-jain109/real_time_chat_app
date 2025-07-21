@@ -1,12 +1,12 @@
 /* Main container with full-height background image */
-.container {
+.sign-up-container {
     background-image: url("/assets/form-background.png");
     height: 100vh;
     font-family: sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: hidden
+    overflow: hidden;
 }
 
 /* Responsive background behavior for small screens */

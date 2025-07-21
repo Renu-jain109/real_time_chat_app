@@ -1,5 +1,5 @@
 /* Main container with full-height background image */
-.container {
+.login-container{
     background-image: url("/assets/form-background.png");
     height: 100vh;
     font-family: sans-serif;

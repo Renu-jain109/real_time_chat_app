@@ -10,21 +10,21 @@
         </a>
 
         <!-- Authentication Buttons -->
-        <div class="">
+        <div class="flex flex-row gap-6">
 
             <!-- Show Login button only if not logged in -->
             <button type="button" *ngIf="!loggedIn"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                routerLink="/login">Login</button>
+            class="text-gray-900 bg-white focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2"
+            routerLink="/login">Login</button>
 
             <!-- Show Logout button only if logged in -->
             <button type="button" *ngIf="loggedIn"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                (click)="logout()">Logout</button>
+            class="text-gray-900 bg-white focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2"
+            (click)="logout()">Logout</button>
 
             <!-- Always show Sign Up button -->
             <button type="button"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                class="text-gray-900 bg-white focus:outline-none hover:bg-gray-500 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 me-2 mb-2"
                 routerLink="/signup">Sign UP</button>
 
         </div>
